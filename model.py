@@ -5,6 +5,7 @@
 
 import pandas as pd
 import numpy as np
+from sklearn.metrics import f1_score
 from xgboost import XGBClassifier
 
 """# Processing Data"""
@@ -12,8 +13,6 @@ from xgboost import XGBClassifier
 df = pd.read_csv("https://raw.githubusercontent.com/dphi-official/Datasets/master/Loan_Data/loan_train.csv").drop(['Unnamed: 0'],axis = 1)
 
 test_data = pd.read_csv('https://raw.githubusercontent.com/dphi-official/Datasets/master/Loan_Data/loan_test.csv')
-
-df.head()
 
 """# Preprocessing"""
 
@@ -46,7 +45,6 @@ xgbc = XGBClassifier(learning_rate =0.5, n_estimators=11, max_depth=12, min_chil
 
 xgbc.fit(train[test.columns],train[target])
 pred = xgbc.predict(test)
-
 pd.DataFrame({'prediction':pred}).to_csv('final_prediction.csv',index = False)
 
 """# Pickling"""
