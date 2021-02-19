@@ -8,3 +8,7 @@ The director of SZE bank identified that going through the loan applications to 
 
 # Objective
 The idea behind this ML project is to build an ML model and web application that the bank can use to classify if a user can be granted a loan or not.
+
+
+# Final Implementation using Streamlit App
+https://loan-approval-prediction-pinky.herokuapp.com/
